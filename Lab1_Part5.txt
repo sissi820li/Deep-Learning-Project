@@ -1,0 +1,40 @@
+1. Learning Rate
+The "step size" your model takes when trying to correct its mistakes. When the network gets an answer wrong, the learning rate determines how aggressively it changes its internal math to try and get it right the next time.
+- Increasing it (0.05 -> 0.05, 0.1): The model learns much faster. However, if the steps are too huge, the model will "overshoot" the optimal solution, causing your error rate to bounce around wildly
+- Decreasing it (0.05 -> 0.001, 0.0001): The model takes tiny steps. It is stable and precise, but training might take incredibly long, or the model might get stuck in a "good enough" state before finding the best possible solution.
+
+2. Number of Hidden Units
+The memory capacity of a specific layer. If the model has 30 hidden units, then it has 30 different internal "features" it can use to figure out the right answer. 
+- Increasing it (30 -> 100, 500): The model becomes smarter and can learn highly complex patterns. The risk is overfitting it and causing it to get so smart it memorizes the exact training images instead of learning the general pattern, causing test accuracy to plummet.
+- Decreasing it (30 -> 5, 10): The model trains much faster and forces itself to only learn the most essential features. The risk is underfitting since it might not have enough brainpower to capture the complexity.
+
+3. Number of Training Iterations (Epochs)
+An iteration (or epoch) is one complete pass through your entire training dataset.
+- Increasing it: Gives the model more time to practice and refine its weights. Accuracy will usually go up. However, if you train for too many iterations, the model will start overfittingand the training error drops, but the test error gets worse.
+- Decreasing it: Saves compute time, but you risk cutting the training off before the model has actually finished learning the patterns
+
+4. Number of Layers
+Determines the "depth" of the network. Each layer learns increasingly abstract concepts. For example, Layer 1 might learn to detect edges, Layer 2 combines edges into curves, and Layer 3 combines curves into numbers.
+- Increasing it (2 -> 3, 4): Allows the model to understand complex and hierarchical data. The downside is that deeper networks are harder to train, require more data, and are prone to vanishing gradients (where the learning signals die out before reaching the first layer).
+- Decreasing it: Simpler and faster to train, but less capable of abstract reasoning.
+
+5. Types of Activation Functions
+Activation functions (ReLU, Sigmoid, or Tanh) introduce non-linearity. Without them, a neural network would just be one giant linear algebra equation and could only ever draw straight lines to separate data.
+- ReLU (F.relu): The modern standard. It essentially says "if the value is negative, make it zero; otherwise, leave it alone." It trains very fast and helps prevent the vanishing gradient problem.
+- Sigmoid (torch.sigmoid): Squashes all outputs into a smooth curve between 0 and 1. It is great for outputting probabilities, but it is notoriously slow to train in hidden layers because the gradients (the learning signals) get very small.
+
+Training + Testing Data
+
+1. Change the number of Hidden units: 
+# of Hidden Units       Training Error       Training Accuracy        Testing Error      Testing Accuracy
+10                      0.047                0.953                    0.104              0.896
+30                      0.036                0.964                    0.079              0.921
+100                     0.033                0.967                    0.074              0.926
+500                     0.03                 0.97                     0.077              0.923
+
+1. Change the Learning rate: 
+Learning Rate           Training Error       Training Accuracy        Testing Error      Testing Accuracy
+0.001                   0.078                0.922                    0.113              0.887
+0.005                   0.036                0.964                    0.079              0.921
+0.05                    0.312                0.688                    0.297              0.703
+0.1                     0.312                0.688                    0.297              0.703
