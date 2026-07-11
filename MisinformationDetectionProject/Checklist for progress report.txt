@@ -11,8 +11,6 @@
 
 2. Baseline Model Implementation: establish and test a simple model to compare with DL architecture 
 
-You must establish and test a simple model to compare against your deep learning architecture.
-
 * Build your baseline model utilizing TF-IDF vectorization and Logistic Regression
 * Run the baseline to generate at least one quantitative result (accuracy, error, or loss)
 * Generate at least one qualitative result, such as highlighting the specific words the baseline model flags most often as misinformation
