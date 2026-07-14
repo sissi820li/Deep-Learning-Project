@@ -25,11 +25,3 @@
 * Document the complexity of your model by noting specific details like the number of layers and total parameters
 * Create a detailed diagram of this primary architecture
 * Keep track of any challenges faced during the primary model's development
-
-4. Drafting and Formatting the Report: must format the report exactly to the course specifications
-
-* Write a brief introduction describing the motivations behind detecting medical misinformation and justify why deep learning is required
-* Clearly define the inputs (short-form text datasets) and outputs (probability of real or fake) within the report
-* Provide a detailed summary of your data processing, making it clear enough that a classmate could reproduce your steps
-* Write the document in LaTeX utilizing the course template and the ICLR conference format
-* Restrict the main text to a maximum of 3 pages, relying on your tables, model diagrams, and figures to keep the writing concise
