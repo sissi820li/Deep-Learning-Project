@@ -1,0 +1,27 @@
+1. Data Collection & Processing: prepare dataset and document cleaning process
+
+* You need to obtain the CoAID and Fake News Prediction datasets
+* Filter the datasets to extract short-form text of 50 words or less
+* Remove noise from the data, including URLs, user handles, hashtags, stopwords, and special characters, and convert all text to lowercase
+* Tokenize the cleaned text, convert it to a numerical tensor format, and pad all sequences to a fixed length
+* Wrap your processed data into PyTorch Dataset and DataLoader objects
+* Calculate and record statistics about your cleaned data, such as the number of examples in each class
+* Save at least one explicit example of a cleaned training sample to showcase in the report
+* Write down a plan for how you will obtain new, never-before-seen data for final testing.
+
+2. Baseline Model Implementation: establish and test a simple model to compare with DL architecture 
+
+* Build your baseline model utilizing TF-IDF vectorization and Logistic Regression
+* Run the baseline to generate at least one quantitative result (accuracy, error, or loss)
+* Generate at least one qualitative result, such as highlighting the specific words the baseline model flags most often as misinformation
+* Create a diagram illustrating the baseline model's workflow
+* Document any challenges you encountered while implementing the baseline
+
+3. Primary Deep Learning Model Implementation: build the initial version of your proposed neural network to prove its feasibility
+
+* Construct the primary model using an Embedding Layer, an LSTM or Bi-LSTM network, and a Linear Classifier with a Sigmoid activation function
+* Train this model to produce at least one quantitative result evaluating metrics like Recall, Precision, Accuracy, or Loss
+* Produce at least one qualitative result identifying something interesting about how the LSTM model performs on selected text samples
+* Document the complexity of your model by noting specific details like the number of layers and total parameters
+* Create a detailed diagram of this primary architecture
+* Keep track of any challenges faced during the primary model's development
